@@ -1,0 +1,42 @@
+<div class="container animation-target" style="text-align:left;margin-top:70px;">
+	<div class="col s12  center">
+		<h5 style="margin-bottom:20px">قائمة المشتريات</h5>
+	</div>
+		<p >قائمة مذخر الاول</p>
+
+	<ul class="collection">
+		{{#stores}}
+		<li class="collection-item avatar">
+			<img src="{{img._url}}" alt="" class="circle">
+			<span class="title">{{brand}} {{comName}}</span>
+			<p style="font-size: 12px; line-height: 14px;">{{sciName}} <br>
+				Store: {{createdBy}} <br>
+			</p>
+			<a href="#!" class="secondary-content" style="color:#03A9F4; font-size:20px"><i class="material-icons">close</i></a>
+			<span class="secondary-content" style="color:#03A9F4; right:60px; font-family: work sans; font-size:20px">{{price}}$</span>
+			<span  class="secondary-content" style="right: 132px; top: 19px; width: 70px;">
+				<input value="2" type="number" style="color: #03A9F4; font-family: work sans; font-size: 20px; background:#fafafa; border-radius: 5px; text-align: center;">
+			</span>
+			
+		</li>
+	    <button  class="btn" style="margin-bottom:20px;" >تاكيد الطلب</button>
+
+		{{/stores}}
+	</ul>
+
+
+</div>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	<a class="btn-floating btn-large" href="/checkout">
+		<i class="large material-icons accent-color">shopping_cart</i>
+	</a>
+</div>
+<script>
+	$(".page-title").html("<a href='\\'>رجوع \></a>")
+	$(".logo").html("<a href='/'><img width='20px;' src='/public/img/arrow487.svg' alt=''>")
+			$(document).ready(function(){
+		// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+		$('.modal-trigger').leanModal();
+		});
+		
+</script>

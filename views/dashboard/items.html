@@ -1,0 +1,162 @@
+<div class="container" style="text-align:left;margin-top:70px;">
+	<ul class="collection">
+		{{#stores:num}}
+		<li class="collection-item avatar">
+			<a href="{{img._url}}" class="fancybox" style="position: absolute; left: 0px;">
+				<img src="{{img._url}}" alt="" class="circle">
+			</a>
+			<span class="title">{{brand}} {{comName}}</span>
+			<p style="font-size: 12px; line-height: 14px;">{{sciName}}</p>
+			<!-- <span class="item-badge">{{storeName}}</span> -->
+			<span class="item-badge" style="font-family: work sans;">Package: {{sheetPerPack}}x{{tabletPerSheet}} </span>
+			<span class="item-badge" style="font-family: work sans;">Bonus: {{bonus}}</span>
+			<p>
+				<input data-itemid="{{id}}" checked="{{showPrice}}" type="checkbox" class="show-price" id="showprice{{num}}" />
+				<label for="showprice{{num}}">عرض السعر</label>
+				<input data-itemid="{{id}}" checked="{{showToCustomer}}" type="checkbox" class="show-item" id="showitem{{num}}" />
+				<label for="showitem{{num}}">عرض المنتج</label>
+			</p>
+			<a
+				data-itemid="{{id}}" data-itemcomname="{{comName}}" data-itemsciname="{{sciName}}" data-brand="{{brand}}"
+				data-bonus="{{bonus}}" data-priceperunit="{{price}}" data-package="{{sheetPerPack}}x{{tabletPerSheet}}"
+				data-img="{{img._url}}"  data-num="{{num}}" data-storename="{{storeName}}"
+				href="delete-item" class="delete-item secondary-content"
+				style="color:#03A9F4; right:10px; top:15px; font-size:14px" > حذف
+			</a>
+
+
+			<a
+				data-itemid="{{id}}" data-itemcomname="{{comName}}" data-itemsciname="{{sciName}}" data-brand="{{brand}}"
+				data-bonus="{{bonus}}" data-priceperunit="{{price}}" data-sheetPerPack="{{sheetPerPack}}" data-tabletPerSheet="{{tabletPerSheet}}"
+				data-img="{{img._url}}" data-showprice="{{showPrice}}" data-showitem="{{showToCustomer}}" data-max="{{max}}" data-num="{{num}}" data-storename="{{storeName}}"
+				href="edit-item" class="edit-item secondary-content"
+				style="color:#03A9F4; right:10px; top:35px; font-size:14px"> تعديل
+			</a>
+			
+			<span  class="secondary-content" style="color:#03A9F4; right:10px; top:60px; font-family: work sans; font-size:20px;  width: 105px; text-align: right;">{{price}}$</span>
+		</li>
+		{{/stores}}
+	</ul>
+</div>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	<a class="modal-trigger btn-floating btn-large" href="#modal1">
+		<i class="large material-icons accent-color">add</i>
+	</a>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal modal-fixed-footer">
+	<div class="modal-content">
+		<div class="row">
+			<div class="input-field col s8">
+				<input id="comName" placeholder="مثلا: Paracetol" type="text" class="validate">
+				<label class="active" for="comName">الاسم التجاري</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="brand" placeholder="مثلا: SDI" type="text" class="validate">
+				<label class="active" for="brand">العلامة التجاري</label>
+			</div>
+			<div class="input-field col s12">
+				<input id="sciName" type="text" placeholder="مثلا: Paracetamol" class="validate">
+				<label class="active" for="sciName">الاسم العلمي</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="price" type="number" class="validate">
+				<label class="active" for="price">السعر</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="max" type="number" class="validate">
+				<label class="active"  for="max">اعلى كمية</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="bonus" type="text" class="validate">
+				<label class="active" for="bonus">البونص</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="sheetperpack" type="number" class="validate">
+				<label class="active" for="sheetperpack">عدد الشرائط</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="tabletpersheet" type="number" class="validate">
+				<label class="active" for="tabletpersheet">عدد الحب في الشريط</label>
+			</div>
+			<div class="file-field input-field col s12">
+				<div class="btn">
+					<span>اختر ملف</span>
+					<input id="img" type="file" >
+				</div>
+				<div class="file-path-wrapper">
+					<input  class="file-path validate" type="text" placeholder="حمل صورة المنتج">
+				</div>
+			</div>
+			<div class="right col s6">
+				<input type="checkbox" class="filled-in" id="showprice" checked="checked" />
+				<label class="active" for="showprice">اظهر السعر</label>
+			</div>
+			<div class="right col s6">
+				<input type="checkbox" class="filled-in" id="showitem" checked="checked" />
+				<label class="active" for="showitem">اظهر المنتج</label>
+			</div>
+
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="" class="save-item modal-action waves-effect waves-green btn-flat">ادخال</a>
+		<a href="" class="cancel-item modal-action modal-close waves-effect waves-green btn-flat">الغاء</a>
+	</div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal2" class="modal modal-fixed-footer">
+	<div class="modal-content">
+		<div class="row">
+			<div class="input-field col s8">
+				<input id="comName-edit" placeholder="مثلا: Paracetol" type="text" class="validate">
+				<label class="active" for="comName">الاسم التجاري</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="brand-edit" placeholder="مثلا: SDI" type="text" class="validate">
+				<label class="active" for="brand">العلامة التجاري</label>
+			</div>
+			<div class="input-field col s12">
+				<input id="sciName-edit" type="text" placeholder="مثلا: Paracetamol" class="validate">
+				<label class="active" for="sciName">الاسم العلمي</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="price-edit" type="number" class="validate">
+				<label class="active" for="price">السعر</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="max-edit" type="number" class="validate">
+				<label class="active"  for="max">اعلى كمية</label>
+			</div>
+			<div class="input-field col s4">
+				<input id="bonus-edit" type="text" class="validate">
+				<label class="active" for="bonus">البونص</label>
+			</div>
+			<div class="input-field col s6">
+				<input  id="sheetperpack-edit" type="number" class="validate">
+				<label class="active" for="sheetperpack">عدد الشرائط</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="tabletpersheet-edit" type="number" class="validate">
+				<label class="active" for="tabletpersheet">عدد الحب في الشريط</label>
+			</div>
+
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="" class="update-item modal-action waves-effect waves-green btn-flat">تحديث</a>
+		<a href="" class="cancel-item modal-action modal-close waves-effect waves-green btn-flat">الغاء</a>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+
+
+
+$('.modal-trigger').leanModal();
+
+
+
+});</script>
+

@@ -1,0 +1,138 @@
+
+.nav {
+	height: 52px;
+	padding-left: 5px;
+	padding-right: 5px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 1;
+}
+
+.nav ul > li{
+	display: inline-block;
+}
+
+.nav ul > li > a {
+	display: inline-block;
+	margin: 15px 10px 15px 10px;
+	text-decoration: none;
+	color:white;
+
+}
+
+.nav ul > span > li{
+    display: inline-block;
+}
+
+.nav ul > span > li > a {
+    display: inline-block;
+    margin: 15px 10px 15px 10px;
+    text-decoration: none;
+    color: white;
+
+}
+
+.startup-name-large {
+    font-family: 'ghala-bold';
+}
+
+.cover img {
+    position: absolute;
+    left:50%;
+    width: 1734px;
+    margin-left: -867px;
+    z-index: -1;
+    
+
+}
+
+.cover {
+    position: relative;
+    overflow: hidden;
+    min-height: 672px;
+}
+
+
+.nav ul > li > a{
+
+}
+
+
+.nav .page-title a{
+	font-size: 18px !important;
+	text-decoration: none;
+    padding: 0px;
+    margin-top: 9px;
+
+}
+
+
+
+.cart-list {
+	position: fixed;
+    top: 56px;
+    left: 40px;
+    width: 350px;
+    min-height: 200px;
+    background-color: #f2f2f2;
+    z-index: 1000;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    display: none;
+
+
+}
+
+.cart-list .tipping {
+    width: 20px;
+    height: 20px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: background-color: #f2f2f2;
+    border: 1px solid #e0e0e0;
+    position: absolute;
+    top: -11px;
+    background-color: #f2f2f2;
+    left: 63px;
+    border-right: 0px;
+    border-bottom: 0px;
+
+
+}
+
+
+
+.notification-list {
+	position: fixed;
+    top: 56px;
+    left: 17px;
+    width: 250px;
+    min-height: 200px;
+    background-color: #f2f2f2;
+    z-index: 1000;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    display: none;
+
+}
+
+.notification-list .tipping {
+    width: 20px;
+    height: 20px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: background-color: #f2f2f2;
+    border: 1px solid #e0e0e0;
+    position: absolute;
+    top: -11px;
+    background-color: #f2f2f2;
+    left: 42px;
+    border-right: 0px;
+    border-bottom: 0px;
+
+
+}
